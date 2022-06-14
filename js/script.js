@@ -42,3 +42,28 @@ else if(userLevel === 3) {
     rangeMax = 49;
 }
 console.log(userLevel);
+ 
+// Funzione
+
+ let bombsList = generateBombs(1,rangeMax,16);
+ console.log(bombsList);
+function generateBombs (minRange, maxRange ,totalBombs) {
+
+    let randomNumbers = [];
+    while(randomNumbers.length < totalBombs ) {
+        let randomNumber = Math.floor((Math.random() * maxRange - minRange + 1) + minRange);
+        if(!randomNumbers.includes(randomNumber)) {
+            randomNumbers.push(randomNumber);
+        }
+    }
+    return randomNumbers;
+}
+
+// Chiedo all'utente di inserire un numero alla volta finche il gioco non è terminato
+
+let userNumber = parseInt(prompt("  Inserisci un numero alla volta "));
+
+if(userNumber === randomNumbers) {
+    alert('Hai caplestato una bomba!')
+}
+else()
